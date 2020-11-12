@@ -33,9 +33,27 @@ def odd_or_even(num_list, type):
             return num % 2 == 0
         else:
             return num % 2 != 0
-
     return list(filter(num_filter, num_list))
 
 
-my_num_list = list(range(1, 1_000_000_000))
+my_num_list = list(range(1, 1_000 ** 2))
 odd_or_even(my_num_list, 'odd')
+
+def call_counter(func):
+    def wrap(*args):
+        wrap.calls += 1
+        return func(*args)
+    wrap.calls = 0
+    return wrap
+
+@call_counter
+def factorial(num):
+    if num == 1:
+        return num
+    else:
+        return num * factorial(num - 1)
+
+
+x = factorial
+x(55)
+print(x.calls)
