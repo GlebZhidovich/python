@@ -27,10 +27,13 @@ class Ship(Vehicle):
 class Car(Vehicle):
 
     def __init__(self, *args, wheels,**kwargs):
+        if wheels < 4:
+            raise Exception('Wheels should be more')
         super().__init__(*args, **kwargs)
         self.wheels = wheels
 
+
+
     def __str__(self):
         return f"Name: {self.name}, Weight: {self.weight}, Wheels: {self.wheels}"
-
 

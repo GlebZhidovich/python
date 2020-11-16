@@ -1,9 +1,12 @@
 from vehicle import *
 
-vehicle = Vehicle('Bicycle', 20)
-ship = Ship('Titanic', 15000, luggage=['tooth', 'jacket'])
-car = Car("Honda", 2000, wheels=4)
-print(vehicle)
-print(ship)
-print(car)
-ship.show_luggage()
+try:
+    car = Car("Honda", 2000, wheels=3)
+    vehicle = Vehicle('Bicycle', 20)
+    ship = Ship('Titanic', 15000, luggage=['tooth', 'jacket'])
+    print(vehicle)
+    print(ship)
+    print(car)
+    ship.show_luggage()
+except Exception:
+    print('hi')
